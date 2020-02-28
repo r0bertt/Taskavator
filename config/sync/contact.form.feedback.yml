@@ -1,0 +1,14 @@
+uuid: c38c5168-7013-4bd8-96a8-cd0c9ff9dc27
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: vymHlgJy26BuI5GGj9-IXjwR3dRC5C0tij4BpWJnoqw
+id: feedback
+label: 'Website feedback'
+recipients:
+  - info@taskavator.page.localhost
+reply: ''
+weight: 0
+message: 'Your message has been sent.'
+redirect: ''

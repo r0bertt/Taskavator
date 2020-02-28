@@ -1,0 +1,23 @@
+uuid: 4b078f27-b43d-4ef5-b403-bbc2191f0bd4
+langcode: en
+status: true
+dependencies:
+  module:
+    - task_copyright
+  theme:
+    - ts_theme
+id: taskcopyright
+theme: ts_theme
+region: footer
+weight: 0
+provider: null
+plugin: task_copyright
+settings:
+  id: task_copyright
+  label: 'Task Copyright'
+  provider: task_copyright
+  label_display: '0'
+  organization_name: Taskavator
+  year_origin: ''
+  year_to_date: ''
+visibility: {  }

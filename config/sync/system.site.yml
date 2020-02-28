@@ -1,0 +1,14 @@
+uuid: 57ab4573-04a6-44dd-965e-043dc635d95f
+name: Taskavator
+mail: info@taskavator.page.localhost
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
