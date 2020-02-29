@@ -3,32 +3,32 @@
 /**
  * Implements hook_preprocess_html().
  */
-function ts_theme_preprocess_html(&$variables)
-{
-
-  array_push($variables['attributes']['class'], 'bg-secondary');
+function ts_theme_preprocess_html(&$variables) {
+  if (!empty($variables['attributes'])) {
+    array_push($variables['attributes']['class'], 'bg-secondary');
+  }
+  else {
+    $variables['attributes']['class'] = 'bg-secondary';
+  }
 }
 
 /**
  * Implements hook_preprocess_page().
  */
-function ts_theme_preprocess_page(&$variables)
-{
+function ts_theme_preprocess_page(&$variables) {
 
 }
 
 /**
  * Implements hook_preprocess_region().
  */
-function ts_theme_preprocess_region(&$variables)
-{
+function ts_theme_preprocess_region(&$variables) {
 
 }
 
 /**
  * Implements hook_preprocess_block().
  */
-function ts_theme_preprocess_block(&$variables)
-{
+function ts_theme_preprocess_block(&$variables) {
 
 }
