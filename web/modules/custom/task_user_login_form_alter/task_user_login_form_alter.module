@@ -1,14 +1,5 @@
 <?php
 
-/**
- * @file
- * Primary module hooks for Taskavator User login form alter module.
- *
- * @DCG
- * This file is no longer required in Drupal 8.
- * @see https://www.drupal.org/node/2217931
- */
-
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -19,18 +10,11 @@ function task_user_login_form_alter_form_user_login_form_alter(&$form, FormState
   $form['mail'] = [
     '#type' => 'email',
     '#title' => t('E-mail'),
-    '#description' => t('Enter your \'Taskavator\' user mail.'),
+    '#description' => t("Enter your 'Taskavator' user mail."),
     '#required' => TRUE,
     '#weight' => -1,
   ];
 
-  $form['pass'] = [
-    '#type' => 'password',
-    '#title' => t('<br>Password'),
-    '#description' => t('Enter your \'Taskavator\' user password.'),
-    '#required' => TRUE,
-    '#weight' => 0,
-  ];
 
   $form['#validate'] = array_merge(['_task_user_login_form_alter_validate_mail'], $form['#validate']);
 }
@@ -40,5 +24,14 @@ function _task_user_login_form_alter_validate_mail(array &$form, FormStateInterf
   $user = user_load_by_mail($mail);
   if ($user) {
     $form_state->setValue('name', $user->getAccountName());
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function task_user_login_form_alter_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'user_login_form'){
+    $form['pass']['#description'] = t("Enter your 'Taskavator' user password.");
   }
 }

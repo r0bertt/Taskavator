@@ -3,11 +3,7 @@
 namespace Drupal\task_copyright\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Datetime\DrupalDateTime;
-use Drupal\Core\Datetime\Entity\DateFormat;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url;
-use Drupal\Core\Link;
 
 /**
  * Task Copyright module for Block.
@@ -75,7 +71,6 @@ class TaskCopyright extends BlockBase {
     $this->configuration['organization_name'] = $form_state->getValue('organization_name');
     $this->configuration['year_origin'] = $form_state->getValue('year_origin');
     $this->configuration['year_to_date'] = $form_state->getValue('year_to_date');
-    dump($this);
   }
 
   /**
