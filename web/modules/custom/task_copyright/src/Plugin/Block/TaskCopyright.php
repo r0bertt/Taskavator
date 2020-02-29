@@ -45,23 +45,23 @@ class TaskCopyright extends BlockBase {
     ];
 
     $form['year_origin'] = [
-      '#type' => 'date',
+      '#type' => 'datelist',
       '#title' => $this->t('Year origin from'),
       '#description' => $this->t('Leave blank if not necessary.'),
       '#default_value' => $this->configuration['year_origin'],
-      '#format' => 'Y',
-      '#date_date_format' => 'Y',
+      '#date_part_order' => ['year'],
+      '#date_year_range' => '1950:(@year-1)',
     ];
 
     $date = new \DateTime();
     $form['year_to_date'] = [
-      '#type' => 'date',
+      '#type' => 'datelist',
       '#title' => $this->t('Year to date'),
       '#description' => $this->t('Leave blank then the current year (@year) automatically shows up.',
         ['@year' => $date->format('Y')]),
       '#default_value' => $this->configuration['year_to_date'],
-      '#format' => 'Y',
-      '#date_date_format' => 'Y',
+      '#date_part_order' => ['year'],
+      '#date_year_range' => '1950:@year',
     ];
 
     return $form;
@@ -71,9 +71,11 @@ class TaskCopyright extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
+
     $this->configuration['organization_name'] = $form_state->getValue('organization_name');
     $this->configuration['year_origin'] = $form_state->getValue('year_origin');
     $this->configuration['year_to_date'] = $form_state->getValue('year_to_date');
+    dump($this);
   }
 
   /**
