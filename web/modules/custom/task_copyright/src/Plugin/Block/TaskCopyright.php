@@ -3,6 +3,8 @@
 namespace Drupal\task_copyright\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Datetime\Entity\DateFormat;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 use Drupal\Core\Link;
@@ -43,36 +45,26 @@ class TaskCopyright extends BlockBase {
     ];
 
     $form['year_origin'] = [
-      '#type' => 'textfield',
+      '#type' => 'date',
       '#title' => $this->t('Year origin from'),
       '#description' => $this->t('Leave blank if not necessary.'),
       '#default_value' => $this->configuration['year_origin'],
+      '#format' => 'Y',
+      '#date_date_format' => 'Y',
     ];
 
     $date = new \DateTime();
     $form['year_to_date'] = [
-      '#type' => 'textfield',
+      '#type' => 'date',
       '#title' => $this->t('Year to date'),
       '#description' => $this->t('Leave blank then the current year (@year) automatically shows up.',
         ['@year' => $date->format('Y')]),
       '#default_value' => $this->configuration['year_to_date'],
+      '#format' => 'Y',
+      '#date_date_format' => 'Y',
     ];
 
     return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function blockValidate($form, FormStateInterface $form_state) {
-    parent::blockValidate($form, $form_state);
-
-    if (!(preg_match("^(19[0-8][0-9]|199[0-9]|20[0-8][0-9]|209[0-9])$", $this->configuration['year_origin']))) {
-      $form_state->setError($form['year_origin'], $this->t('Please edit your origin date'));
-    }
-    if (!(preg_match("^(19[0-8][0-9]|199[0-9]|20[0-8][0-9]|209[0-9])$", $this->configuration['year_to_date']))) {
-      $form_state->setError($form['year_to_date'], $this->t('Please edit your year to date'));
-    }
   }
 
   /**
@@ -91,12 +83,9 @@ class TaskCopyright extends BlockBase {
     $date = new \DateTime();
 
     // From $year_to_date to Present.
-    if ($year_to_date = empty($this->configuration['year_to_date'])) {
-      $date->format('Y');
-    }
-    else {
-      $this->configuration['year_to_date'];
-    }
+    $year_to_date = empty($this->configuration['year_to_date'])
+      ? $date->format('Y')
+      : $this->configuration['year_to_date'];
 
     if ($this->configuration['year_origin'] == 0 || $date->format('Y') == $this->configuration['year_origin']) {
       return
@@ -112,7 +101,7 @@ class TaskCopyright extends BlockBase {
       return
         [
           '#type' => 'markup',
-          '#markup' => $this->t('Copyright &copy; @year_origin-@year_to_date @organization', [
+          '#markup' => $this->t('Copyright &copy; @year_origin - @year_to_date @organization', [
             '@year_origin' => $this->configuration['year_origin'],
             '@year_to_date' => $year_to_date,
             '@organization' => $this->configuration['organization_name'],
