@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_form_alter().
+ */
+function task_user_registration_form_alter_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  if ($form_id != ('user_register_form' || 'user_form')) {
+    $form['field_github'] = [
+      '#type' => 'hidden',
+    ];
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function task_user_registration_form_alter_entity_type_alter(array &$entity_types) {
+
+  $entity_types['user']->setFormClass('register', \Drupal\task_user_registration_form_alter\Form\TaskUserRegistrationFormAlter::class);
+}
