@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.user.register_for_team_leads
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_github
+    - field.field.user.user.field_last_name
+    - field.field.user.user.user_picture
+  module:
+    - link
+    - user
+id: user.user.register_for_team_leads
+targetEntityType: user
+bundle: user
+mode: register_for_team_leads
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_first_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_github:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_last_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  contact: true
+  language: true
+  timezone: true
+  user_picture: true

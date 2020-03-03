@@ -12,26 +12,13 @@ class TaskUserRegistrationFormAlter extends RegisterForm {
     $form['field_roles'] = [
       '#title' => 'Role',
       '#type' => 'select',
-      '#description' => 'Select the Role in The Project',
+      '#description' => 'Select your role in the project',
       '#options' => [
-        'tech lead' => $this->t('Tech Lead'),
-        'developer' => $this->t('Developer'),
+        'te' => $this->t('Tech Lead'),
+        'de' => $this->t('Developer'),
       ],
       '#empty_option' => '- Select Your Role -',
       '#required' => 'TRUE',
-      '#weight' => 5,
-    ];
-
-    $form['field_github'] = [
-      '#title' => 'Github',
-      '#type' => 'textfield',
-      '#description' => 'Please enter a full link to your Github',
-      '#placeholder' => 'https://github.com/',
-      '#states' => [
-        'visible' => [
-          ":input[name='field_roles']" => ['value' => 'tech lead'],
-        ],
-      ],
       '#weight' => 5,
     ];
 
@@ -40,7 +27,10 @@ class TaskUserRegistrationFormAlter extends RegisterForm {
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
+    $role_id = $form_state->getValue('field_roles');
+    $form_state->setValue('roles', [$role_id]);
 
+    return parent::submitForm($form, $form_state);
   }
 
 }

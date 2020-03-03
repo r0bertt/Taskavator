@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.register_for_developers
+label: 'Register for developers'
+targetEntityType: user
+cache: true

@@ -1,0 +1,11 @@
+name: Task User custom register form
+type: module
+description: This module provides custom register forms for user registration
+package: taskavator
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - file
+  - image
+  - link
+  - user
