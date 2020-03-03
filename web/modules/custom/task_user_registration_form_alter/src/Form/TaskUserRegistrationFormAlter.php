@@ -9,7 +9,19 @@ class TaskUserRegistrationFormAlter extends RegisterForm {
 
   public function buildForm(array $form, FormStateInterface $form_state) {
 
-    $form['field_roles'] = [
+    $form = parent::buildForm($form, $form_state);
+
+    $form['field_github']['#states'] = [
+      'visible' => [
+        ":input[name='field_roles']" => ['value' => 'te'],
+      ],
+    ];
+
+    $form['field_roles_container'] = [
+      '#type' => 'container'
+    ];
+
+    $form['field_roles_container']['widget'] = [
       '#title' => 'Role',
       '#type' => 'select',
       '#description' => 'Select your role in the project',
@@ -19,10 +31,10 @@ class TaskUserRegistrationFormAlter extends RegisterForm {
       ],
       '#empty_option' => '- Select Your Role -',
       '#required' => 'TRUE',
-      '#weight' => 5,
+      '#name' => 'field_roles'
     ];
 
-    return parent::buildForm($form, $form_state);
+    return $form;
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
