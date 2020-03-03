@@ -1,4 +1,4 @@
-uuid: 4b078f27-b43d-4ef5-b403-bbc2191f0bd4
+uuid: 3e8567bd-ba2e-4414-a7a3-8997cd03294d
 langcode: en
 status: true
 dependencies:
@@ -18,6 +18,6 @@ settings:
   provider: task_copyright
   label_display: '0'
   organization_name: Taskavator
-  year_origin: ''
-  year_to_date: ''
+  year_origin: null
+  year_to_date: null
 visibility: {  }

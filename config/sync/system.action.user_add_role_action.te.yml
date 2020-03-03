@@ -1,0 +1,14 @@
+uuid: a946a74b-0ef8-4652-aacc-e39b21158a85
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.te
+  module:
+    - user
+id: user_add_role_action.te
+label: 'Add the Tech lead role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: te

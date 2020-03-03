@@ -1,0 +1,14 @@
+uuid: 3116d52a-6869-4a22-979f-30885c325ce2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.de
+  module:
+    - user
+id: user_remove_role_action.de
+label: 'Remove the Developer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: de

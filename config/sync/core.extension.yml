@@ -34,6 +34,9 @@ module:
   shortcut: 0
   system: 0
   task_copyright: 0
+  task_user_custom_register_form: 0
+  task_user_login_form_alter: 0
+  task_user_registration_form_alter: 0
   taxonomy: 0
   text: 0
   toolbar: 0
