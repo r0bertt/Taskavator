@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function task_user_custom_register_form_entity_type_alter(array &$entity_types) {
+
+  $entity_types['user']->setFormClass('register_for_developers', \Drupal\user\ProfileForm::class);
+  $entity_types['user']->setFormClass('register_for_team_leads', \Drupal\user\ProfileForm::class);
+
+}

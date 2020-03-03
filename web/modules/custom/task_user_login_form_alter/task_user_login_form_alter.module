@@ -15,7 +15,6 @@ function task_user_login_form_alter_form_user_login_form_alter(&$form, FormState
     '#weight' => -1,
   ];
 
-
   $form['#validate'] = array_merge(['_task_user_login_form_alter_validate_mail'], $form['#validate']);
 }
 

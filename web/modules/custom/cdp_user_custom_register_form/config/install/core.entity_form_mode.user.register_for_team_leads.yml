@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.register_for_team_leads
+label: 'Register for team leads'
+targetEntityType: user
+cache: true

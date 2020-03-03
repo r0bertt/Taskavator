@@ -1,0 +1,29 @@
+/*Styling forms
+*/
+.form-text {
+  display: inline-block;
+}
+
+.description, #edit-name--description {
+  font-size: 11px;
+  margin: 10px 0;
+  color: grey;
+  padding: 10px;
+  background: #f3f3f3;
+  border-radius: 5px;
+}
+
+.js-form-item label{width:22%;}
+.js-form-item input{width:77%;}
+@media only screen and (max-width: 768px)
+{.js-form-item input, .js-form-item label{width:100%;}}
+.js-form-item.form-item.js-form-type-textfield.form-item-name.js-form-item-name {
+}
+.user-register-form .js-form-item{
+  background: #fff;
+  margin:10px 0;
+  padding:10px;
+  border-radius:5px
+}
+/*End of styling forms
+*/
