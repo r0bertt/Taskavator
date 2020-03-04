@@ -616,7 +616,20 @@ display:
       sorts: {  }
       title: 'Taskavator''s Developers'
       header: {  }
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<a href="http://taskavator.page.localhost/admin/people/create">Create</a>'
+            format: restricted_html
+          plugin_id: text
       empty: {  }
       relationships: {  }
       arguments: {  }

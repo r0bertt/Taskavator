@@ -636,7 +636,52 @@ display:
           absolute: false
           entity_type: task
           plugin_id: entity_link
-      filters: {  }
+      filters:
+        field_status_value:
+          id: field_status_value
+          table: task__field_status
+          field: field_status_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value:
+            all: all
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_status_value_op
+            label: 'Task status'
+            description: ''
+            use_operator: false
+            operator: field_status_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_status_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              de: '0'
+              te: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          plugin_id: list_field
       sorts:
         created:
           id: created
@@ -655,17 +700,19 @@ display:
           plugin_id: date
       title: Tasks
       header:
-        display_link:
-          id: display_link
+        area:
+          id: area
           table: views
-          field: display_link
+          field: area
           relationship: none
           group_type: group
           admin_label: ''
           empty: false
-          display_id: page_1
-          label: 'Create new task'
-          plugin_id: display_link
+          tokenize: false
+          content:
+            value: '<a href="http://taskavator.page.localhost/admin/content/task/add">Create a task</a>'
+            format: basic_html
+          plugin_id: text
       footer: {  }
       empty:
         area:
@@ -690,6 +737,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.roles
       tags:
@@ -718,6 +766,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.roles
       tags:
