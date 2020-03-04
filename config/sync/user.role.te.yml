@@ -7,4 +7,8 @@ label: 'Tech lead'
 weight: -7
 is_admin: null
 permissions:
+  - 'create task'
+  - 'delete task'
   - 'edit own comments'
+  - 'edit task'
+  - 'view task'

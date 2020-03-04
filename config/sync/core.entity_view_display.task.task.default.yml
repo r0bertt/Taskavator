@@ -1,0 +1,250 @@
+uuid: 68bebb7d-8214-4540-b716-2f9ed662b50f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.task.task.field_hours_spent
+    - field.field.task.task.field_hours_to_do
+    - field.field.task.task.field_link
+    - field.field.task.task.field_minutes_spent
+    - field.field.task.task.field_status
+  module:
+    - layout_builder
+    - link
+    - options
+    - task
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          e3d2b43b-dadd-4b84-9755-ee124fd0a5ad:
+            uuid: e3d2b43b-dadd-4b84-9755-ee124fd0a5ad
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:title'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          b51c7071-25f7-4296-81c4-1c7533556721:
+            uuid: b51c7071-25f7-4296-81c4-1c7533556721
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:description'
+              formatter:
+                type: text_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+          df749f83-8f7c-4e48-aea6-b0c983807868:
+            uuid: df749f83-8f7c-4e48-aea6-b0c983807868
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:uid'
+              formatter:
+                label: above
+                type: author
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          0185f83b-446a-46fb-8277-132dae26a7e4:
+            uuid: 0185f83b-446a-46fb-8277-132dae26a7e4
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:created'
+              formatter:
+                label: above
+                type: timestamp
+                settings:
+                  date_format: medium
+                  custom_date_format: ''
+                  timezone: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 3
+          99ec94aa-c272-401b-8362-ceda35e28946:
+            uuid: 99ec94aa-c272-401b-8362-ceda35e28946
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:field_hours_to_do'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 4
+          2d3fdaab-b456-44e1-85d9-a00df78091fe:
+            uuid: 2d3fdaab-b456-44e1-85d9-a00df78091fe
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:field_link'
+              formatter:
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+                type: link
+            additional: {  }
+            weight: 5
+          d91b4a94-a18d-4de5-aa32-fecc691b8c32:
+            uuid: d91b4a94-a18d-4de5-aa32-fecc691b8c32
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:field_hours_spent'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 6
+          32a8c042-546e-40c0-8c4a-61bc6264a09c:
+            uuid: 32a8c042-546e-40c0-8c4a-61bc6264a09c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:field_minutes_spent'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 7
+          8b087cb3-2503-42a6-a898-e2dc7e0a62b9:
+            uuid: 8b087cb3-2503-42a6-a898-e2dc7e0a62b9
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:task:task:field_status'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 8
+        third_party_settings: {  }
+id: task.task.default
+targetEntityType: task
+bundle: task
+mode: default
+content:
+  created:
+    label: above
+    type: timestamp
+    weight: 20
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  description:
+    type: text_default
+    label: above
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hours_spent:
+    weight: 23
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_hours_to_do:
+    weight: 21
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_link:
+    weight: 22
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_minutes_spent:
+    weight: 24
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_status:
+    weight: 25
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    label: above
+    type: author
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

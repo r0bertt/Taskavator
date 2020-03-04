@@ -27,3 +27,29 @@
 }
 /*End of styling forms
 */
+
+/*Styling list items
+ */
+
+.item-list li {
+  margin: 20px 0;
+  background: #fff;
+  padding: 10px;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+.views-field-title{
+  margin: 10px 0;
+}
+
+.views-field-title, .views-label, .views-field-nothing {
+  font-weight: bold;
+}
+
+.item-list{
+  width: 100%;
+  word-wrap: break-word;
+}
+
+/*End of styling list items
+ */

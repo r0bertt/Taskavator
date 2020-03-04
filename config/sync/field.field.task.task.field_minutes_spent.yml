@@ -1,0 +1,23 @@
+uuid: e71f97e3-40cc-4b84-8536-4ccec6010fc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.task.field_minutes_spent
+  module:
+    - options
+    - task
+id: task.task.field_minutes_spent
+field_name: field_minutes_spent
+entity_type: task
+bundle: task
+label: 'Minutes spent'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

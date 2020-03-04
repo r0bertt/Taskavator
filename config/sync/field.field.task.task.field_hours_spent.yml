@@ -1,0 +1,23 @@
+uuid: 7628f3cb-0b01-4c61-9ffa-dda1d8740570
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.task.field_hours_spent
+  module:
+    - options
+    - task
+id: task.task.field_hours_spent
+field_name: field_hours_spent
+entity_type: task
+bundle: task
+label: 'Hours spent'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

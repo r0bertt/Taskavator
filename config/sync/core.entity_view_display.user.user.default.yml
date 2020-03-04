@@ -10,8 +10,90 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
+    - layout_builder
+    - layout_discovery
     - link
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          e7bf7df6-ad0d-4e1f-9179-d20db683cc93:
+            uuid: e7bf7df6-ad0d-4e1f-9179-d20db683cc93
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:user_picture'
+              formatter:
+                type: image
+                settings:
+                  image_style: thumbnail
+                  image_link: content
+                third_party_settings: {  }
+                label: inline
+            additional: {  }
+            weight: 0
+          f5069c2d-cb6c-4491-b569-313e4944a9bc:
+            uuid: f5069c2d-cb6c-4491-b569-313e4944a9bc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:field_first_name'
+              formatter:
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 1
+          57db1fd6-8a19-4222-9c88-93c455e56cc2:
+            uuid: 57db1fd6-8a19-4222-9c88-93c455e56cc2
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:field_last_name'
+              formatter:
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 2
+          07f9ad6f-65b1-4634-b262-e772b6265046:
+            uuid: 07f9ad6f-65b1-4634-b262-e772b6265046
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:field_github'
+              formatter:
+                label: above
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: ''
+                  target: ''
+                third_party_settings: {  }
+                type: link
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.default
@@ -20,7 +102,7 @@ bundle: user
 mode: default
 content:
   field_first_name:
-    weight: 6
+    weight: 1
     label: inline
     settings:
       link_to_entity: false
@@ -28,7 +110,7 @@ content:
     type: string
     region: content
   field_github:
-    weight: 8
+    weight: 3
     label: above
     settings:
       trim_length: 80
@@ -40,18 +122,13 @@ content:
     type: link
     region: content
   field_last_name:
-    weight: 7
+    weight: 2
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  member_for:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   user_picture:
     type: image
     weight: 0
@@ -60,5 +137,7 @@ content:
       image_style: thumbnail
       image_link: content
     third_party_settings: {  }
-    label: hidden
-hidden: {  }
+    label: inline
+hidden:
+  layout_builder__layout: true
+  member_for: true

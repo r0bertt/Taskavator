@@ -1,0 +1,10 @@
+entity.task.settings:
+  title: task
+  description: Configure a task entity type
+  route_name:  entity.task.settings
+  parent: system.admin_structure
+entity.task.collection:
+  title: tasks
+  description: List of tasks
+  route_name: entity.task.collection
+  parent: system.admin_content
