@@ -4,6 +4,7 @@ namespace Drupal\task\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\task\Entity\Task;
 
 /**
  * Configuration form for a task entity type.

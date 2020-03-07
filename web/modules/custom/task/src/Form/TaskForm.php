@@ -21,7 +21,7 @@ class TaskForm extends ContentEntityForm {
 
     $message_arguments = ['%label' => $this->entity->label()];
     $logger_arguments = $message_arguments + ['link' => render($link)];
-
+ 
     if ($result == SAVED_NEW) {
       $this->messenger()->addStatus($this->t('New task %label has been created.', $message_arguments));
       $this->logger('task')->notice('Created new task %label', $logger_arguments);

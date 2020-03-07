@@ -1,24 +1,27 @@
-uuid: 24358965-48b4-4e79-a9eb-3c4126d3c68b
+uuid: e90f635a-23a6-4bd9-9f5f-57b65f2f59df
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_first_name
-    - field.storage.user.field_github
-    - field.storage.user.field_last_name
-    - system.menu.account
+    - field.storage.task.field_developer
+    - field.storage.task.field_link
+    - field.storage.task.field_status
+    - system.menu.main
     - user.role.administrator
-    - user.role.te
+    - user.role.de
   module:
     - link
+    - options
+    - task
+    - text
     - user
-id: list_of_tech_leads
-label: 'List of Tech Leads'
+id: tasks_for_developer
+label: 'Tasks for Developer'
 module: views
-description: 'All users with tech lead role '
+description: 'All tasks'
 tag: ''
-base_table: users_field_data
-base_field: uid
+base_table: task_field_data
+base_field: id
 display:
   default:
     display_plugin: default
@@ -30,6 +33,7 @@ display:
         type: role
         options:
           role:
+            de: de
             administrator: administrator
       cache:
         type: tag
@@ -55,10 +59,13 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 10
+          items_per_page: 5
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: ‹‹
+            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -67,90 +74,32 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: ‹‹
-            next: ››
       style:
-        type: table
+        type: html_list
         options:
-          grouping: {  }
           row_class: ''
           default_row_class: true
-          override: true
-          sticky: false
-          caption: ''
-          summary: ''
-          description: ''
-          columns:
-            uid: uid
-            mail: mail
-            name: name
-            field_last_name: field_last_name
-            field_first_name: field_first_name
-            field_github: field_github
-            access: access
-          info:
-            uid:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            mail:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            name:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_last_name:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_first_name:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_github:
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            access:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          default: '-1'
-          empty_table: false
+          uses_fields: true
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: true
       fields:
-        uid:
-          id: uid
-          table: users_field_data
-          field: uid
+        id:
+          id: id
+          table: task_field_data
+          field: id
           relationship: none
           group_type: group
           admin_label: ''
-          label: uID
-          exclude: false
+          label: ''
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -182,7 +131,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -205,17 +154,20 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: user
-          entity_field: uid
+          entity_type: task
+          entity_field: id
           plugin_id: field
-        mail:
-          id: mail
-          table: users_field_data
-          field: mail
+        title:
+          table: task_field_data
+          field: title
+          id: title
+          entity_type: null
+          entity_field: title
+          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
-          label: Email
+          label: ''
           exclude: false
           alter:
             alter_text: false
@@ -237,70 +189,6 @@ display:
             max_length: 0
             word_boundary: true
             ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: basic_string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: user
-          entity_field: mail
-          plugin_id: field
-        name:
-          id: name
-          table: users_field_data
-          field: name
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Name
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: false
-            ellipsis: false
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -321,9 +209,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: user_name
-          settings:
-            link_to_entity: true
+          type: string
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -334,17 +221,14 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: user
-          entity_field: name
-          plugin_id: field
-        field_last_name:
-          id: field_last_name
-          table: user__field_last_name
-          field: field_last_name
+        description__format:
+          id: description__format
+          table: task_field_data
+          field: description__format
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Last name'
+          label: Description
           exclude: false
           alter:
             alter_text: false
@@ -377,7 +261,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -386,9 +270,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
+          type: text_default
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -399,15 +282,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: task
+          entity_field: description
           plugin_id: field
-        field_first_name:
-          id: field_first_name
-          table: user__field_first_name
-          field: field_first_name
+        uid:
+          id: uid
+          table: task_field_data
+          field: uid
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'First name'
+          label: Author/Supervisor
           exclude: false
           alter:
             alter_text: false
@@ -440,7 +325,72 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: task
+          entity_field: uid
+          plugin_id: field
+        created:
+          id: created
+          table: task_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Authored on'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -449,9 +399,11 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: timestamp
           settings:
-            link_to_entity: false
+            date_format: short
+            custom_date_format: 'h:ia'
+            timezone: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -462,15 +414,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: task
+          entity_field: created
           plugin_id: field
-        field_github:
-          id: field_github
-          table: user__field_github
-          field: field_github
+        field_link:
+          id: field_link
+          table: task__field_link
+          field: field_link
           relationship: none
           group_type: group
           admin_label: ''
-          label: Github
+          label: YouTrack
           exclude: false
           alter:
             alter_text: false
@@ -503,7 +457,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -518,7 +472,7 @@ display:
             url_only: false
             url_plain: false
             rel: '0'
-            target: '0'
+            target: _blank
           group_column: ''
           group_columns: {  }
           group_rows: true
@@ -530,14 +484,76 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        access:
-          id: access
-          table: users_field_data
-          field: access
+        field_status:
+          id: field_status
+          table: task__field_status
+          field: field_status
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Last access'
+          label: Status
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_developer:
+          id: field_developer
+          table: task__field_developer
+          field: field_developer
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Developer
           exclude: false
           alter:
             alter_text: false
@@ -574,16 +590,14 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: 'not assigned'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: timestamp
+          click_sort_column: target_id
+          type: entity_reference_label
           settings:
-            date_format: medium
-            custom_date_format: ''
-            timezone: ''
+            link: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -594,13 +608,60 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: user
-          entity_field: access
           plugin_id: field
-        edit_user:
-          id: edit_user
-          table: users
-          field: edit_user
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: 'Operations:'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
+        view_task:
+          id: view_task
+          table: task
+          field: view_task
           relationship: none
           group_type: group
           admin_label: ''
@@ -645,51 +706,91 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: edit
+          text: View
           output_url_as_text: false
           absolute: false
-          entity_type: user
-          plugin_id: entity_link_edit
+          entity_type: task
+          plugin_id: entity_link
+        nothing_1:
+          id: nothing_1
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<a href="http://taskavator.page.localhost/task/developer/duration/{{ id }}">Manage</a>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
       filters:
-        status:
-          value: '1'
-          table: users_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: user
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-          group: 1
-        roles_target_id:
-          id: roles_target_id
-          table: user__roles
-          field: roles_target_id
+        field_status_value:
+          id: field_status_value
+          table: task__field_status
+          field: field_status_value
           relationship: none
           group_type: group
           admin_label: ''
           operator: or
           value:
-            te: te
+            all: all
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: field_status_value_op
+            label: 'Task status'
             description: ''
             use_operator: false
-            operator: ''
+            operator: field_status_value_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: field_status_value
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
+              anonymous: '0'
+              de: '0'
+              te: '0'
+              administrator: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -704,13 +805,27 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          entity_type: user
-          entity_field: roles
-          plugin_id: user_roles
-      sorts: {  }
-      title: 'Teskavator''s Tech Leads'
+          plugin_id: list_field
+      sorts:
+        created:
+          id: created
+          table: task_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: task
+          entity_field: created
+          plugin_id: date
+      title: Tasks
       header: {  }
-      footer:
+      footer: {  }
+      empty:
         area:
           id: area
           table: views
@@ -718,28 +833,28 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: false
+          empty: true
           tokenize: false
           content:
-            value: '<a href="http://taskavator.page.localhost/admin/people/create">Create</a>'
+            value: 'There are no tasks, yet.'
             format: basic_html
           plugin_id: text
-      empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      css_class: table
+      css_class: ''
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.roles
       tags:
-        - 'config:field.storage.user.field_first_name'
-        - 'config:field.storage.user.field_github'
-        - 'config:field.storage.user.field_last_name'
+        - 'config:field.storage.task.field_developer'
+        - 'config:field.storage.task.field_link'
+        - 'config:field.storage.task.field_status'
   page_1:
     display_plugin: page
     id: page_1
@@ -747,19 +862,26 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: techleads
+      path: task/developer
+      exposed_block: false
       menu:
         type: normal
-        title: 'List of Tech Leads'
-        menu_name: account
+        title: 'All tasks'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 1
+        context: '0'
+        menu_name: main
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - user.roles
       tags:
-        - 'config:field.storage.user.field_first_name'
-        - 'config:field.storage.user.field_github'
-        - 'config:field.storage.user.field_last_name'
+        - 'config:field.storage.task.field_developer'
+        - 'config:field.storage.task.field_link'
+        - 'config:field.storage.task.field_status'

@@ -652,7 +652,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: developers/list
+      path: developers
       menu:
         type: normal
         title: 'Developers List'

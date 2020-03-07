@@ -30,7 +30,16 @@ function task_theme() {
  *   - attributes: HTML attributes for the containing element.
  */
 function template_preprocess_task(array &$variables) {
+
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function task_entity_type_alter(array &$entity_types) {
+
+  $entity_types['task']->setFormClass('spent_time_developer', \Drupal\task\Form\TaskForm::class);
 }

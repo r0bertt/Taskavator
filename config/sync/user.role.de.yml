@@ -7,4 +7,6 @@ label: Developer
 weight: -8
 is_admin: null
 permissions:
+  - 'access duration'
   - 'edit own comments'
+  - 'view task'

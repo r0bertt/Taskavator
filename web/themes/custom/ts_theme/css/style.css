@@ -4,7 +4,7 @@
   display: inline-block;
 }
 
-.description, #edit-name--description {
+.description, #edit-name--description, #edit-description-0--description {
   font-size: 11px;
   margin: 10px 0;
   color: grey;
@@ -37,9 +37,6 @@
   padding: 10px;
   border-top: 2px solid grey;
   border-bottom: 2px solid grey;
-}
-.views-field-title{
-  margin: 10px 0;
 }
 
 .views-field-title, .views-label, .views-field-nothing {
