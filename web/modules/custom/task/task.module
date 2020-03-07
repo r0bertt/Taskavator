@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Provides a task entity type.
+ */
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_theme().
+ */
+function task_theme() {
+  return [
+    'task' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for task templates.
+ *
+ * Default template: task.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the task information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_task(array &$variables) {
+
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function task_entity_type_alter(array &$entity_types) {
+
+  $entity_types['task']->setFormClass('spent_time_developer', \Drupal\task\Form\TaskForm::class);
+}

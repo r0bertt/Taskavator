@@ -1,0 +1,16 @@
+entity.task.settings:
+  path: 'admin/structure/task'
+  defaults:
+    _form: '\Drupal\task\Form\TaskSettingsForm'
+    _title: 'task'
+  requirements:
+    _permission: 'administer task'
+
+entity.task.developer:
+  path: '/task/developer/duration/{id}'
+  defaults:
+    id: \d+
+    _title: 'Spent time with the task'
+    _controller: '\Drupal\task\Controller\TaskDeveloperController::timeForm'
+  requirements:
+    _permission: 'access duration'

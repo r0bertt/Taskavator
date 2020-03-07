@@ -1,0 +1,42 @@
+uuid: 7f5e561a-188f-40cc-886d-b0183481c956
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - task
+id: task.field_minutes_spent
+field_name: field_minutes_spent
+entity_type: task
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: '0'
+    -
+      value: '10'
+      label: '10'
+    -
+      value: '20'
+      label: '20'
+    -
+      value: '30'
+      label: '30'
+    -
+      value: '40'
+      label: '40'
+    -
+      value: '50'
+      label: '50'
+    -
+      value: '59'
+      label: '59'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

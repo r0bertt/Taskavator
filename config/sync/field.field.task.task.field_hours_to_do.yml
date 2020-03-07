@@ -1,0 +1,23 @@
+uuid: d3b5592c-4b76-4165-a096-47e872513775
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.task.field_hours_to_do
+  module:
+    - options
+    - task
+id: task.task.field_hours_to_do
+field_name: field_hours_to_do
+entity_type: task
+bundle: task
+label: 'Hours to do'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string
