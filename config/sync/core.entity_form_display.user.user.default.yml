@@ -63,6 +63,7 @@ content:
     weight: 3
     region: content
 hidden:
+  langcode: true
   language: true
   layout_builder__layout: true
   timezone: true

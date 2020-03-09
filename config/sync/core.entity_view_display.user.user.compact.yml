@@ -33,5 +33,6 @@ hidden:
   field_first_name: true
   field_github: true
   field_last_name: true
+  langcode: true
   layout_builder__layout: true
   member_for: true

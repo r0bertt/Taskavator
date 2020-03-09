@@ -89,6 +89,7 @@ display:
             field_first_name: field_first_name
             field_github: field_github
             access: access
+            edit_user: edit_user
           info:
             uid:
               sortable: true
@@ -132,6 +133,13 @@ display:
               responsive: ''
             access:
               sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            edit_user:
+              sortable: false
               default_sort_order: asc
               align: ''
               separator: ''

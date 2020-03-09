@@ -61,5 +61,6 @@ content:
     region: content
 hidden:
   field_github: true
+  langcode: true
   layout_builder__layout: true
   timezone: true
