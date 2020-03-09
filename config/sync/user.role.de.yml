@@ -1,0 +1,12 @@
+uuid: 7743dae6-ac98-4bc7-bfb0-772b79d3e09d
+langcode: en
+status: true
+dependencies: {  }
+id: de
+label: Developer
+weight: -8
+is_admin: null
+permissions:
+  - 'access duration'
+  - 'edit own comments'
+  - 'view task'

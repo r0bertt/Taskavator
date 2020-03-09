@@ -1,0 +1,23 @@
+uuid: eceecfac-b7e5-4efb-a1e0-900351a27853
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.task.field_link
+  module:
+    - link
+    - task
+id: task.task.field_link
+field_name: field_link
+entity_type: task
+bundle: task
+label: Link
+description: 'Link to the task YouTrack'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

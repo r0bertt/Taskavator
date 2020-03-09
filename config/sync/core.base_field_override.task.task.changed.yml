@@ -1,0 +1,18 @@
+uuid: 40ebb491-da40-4e50-898f-9df4f8d3a6ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - task
+id: task.task.changed
+field_name: changed
+entity_type: task
+bundle: task
+label: Changed
+description: 'The time that the task was last edited.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

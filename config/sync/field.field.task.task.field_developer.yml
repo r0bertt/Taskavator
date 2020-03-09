@@ -1,0 +1,34 @@
+uuid: 4d7ee761-93fa-436e-a96b-d2c869585db9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.task.field_developer
+  module:
+    - task
+id: task.task.field_developer
+field_name: field_developer
+entity_type: task
+bundle: task
+label: Developer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: true
+    filter:
+      type: role
+      role:
+        de: de
+        te: '0'
+        administrator: '0'
+    target_bundles: null
+    sort:
+      field: name
+      direction: ASC
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,23 @@
+uuid: 05f24f6e-03b4-44c5-a906-490807835b8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_github
+  module:
+    - link
+    - user
+id: user.user.field_github
+field_name: field_github
+entity_type: user
+bundle: user
+label: Github
+description: 'Please enter a link to your Github '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

@@ -1,0 +1,30 @@
+uuid: ec479203-1ed7-4a27-bd5b-56685752d392
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - task
+id: task.field_status
+field_name: field_status
+entity_type: task
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'To do'
+      label: 'To do'
+    -
+      value: 'In Progress'
+      label: 'In Progress'
+    -
+      value: Done
+      label: Done
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -4,7 +4,6 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
-  ckeditor: 0
   color: 0
   comment: 0
   config: 0
@@ -21,6 +20,9 @@ module:
   help: 0
   history: 0
   image: 0
+  language: 0
+  layout_builder: 0
+  layout_discovery: 0
   link: 0
   menu_ui: 0
   node: 0
@@ -33,7 +35,10 @@ module:
   search: 0
   shortcut: 0
   system: 0
+  task: 0
   task_copyright: 0
+  task_user_login_form_alter: 0
+  task_user_registration_form_alter: 0
   taxonomy: 0
   text: 0
   toolbar: 0
@@ -42,6 +47,7 @@ module:
   user: 0
   views_ui: 0
   menu_link_content: 1
+  content_translation: 10
   views: 10
   standard: 1000
 theme:

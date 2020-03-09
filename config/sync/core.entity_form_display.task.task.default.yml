@@ -1,0 +1,74 @@
+uuid: 9cb21001-f00a-43bd-b608-2acba958081f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.task.task.field_developer
+    - field.field.task.task.field_hours_spent
+    - field.field.task.task.field_hours_to_do
+    - field.field.task.task.field_link
+    - field.field.task.task.field_minutes_spent
+    - field.field.task.task.field_status
+  module:
+    - link
+    - task
+    - text
+id: task.task.default
+targetEntityType: task
+bundle: task
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_developer:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_hours_to_do:
+    type: options_select
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_status:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_hours_spent: true
+  field_minutes_spent: true
+  uid: true

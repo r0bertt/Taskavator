@@ -1,0 +1,23 @@
+uuid: f6d021f6-0c59-406e-9f39-072ebacc8663
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.task.field_status
+  module:
+    - options
+    - task
+id: task.task.field_status
+field_name: field_status
+entity_type: task
+bundle: task
+label: Status
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'To do'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

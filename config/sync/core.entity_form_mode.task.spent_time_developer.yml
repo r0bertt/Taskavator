@@ -1,0 +1,10 @@
+uuid: 686b854b-ccac-4236-9b9f-18e0fd2b8b79
+langcode: en
+status: true
+dependencies:
+  module:
+    - task
+id: task.spent_time_developer
+label: 'Spent time developer'
+targetEntityType: task
+cache: true

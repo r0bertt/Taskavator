@@ -1,0 +1,52 @@
+uuid: ef32674b-2007-4354-ab29-0aa6d9f0c54b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.task.spent_time_developer
+    - field.field.task.task.field_developer
+    - field.field.task.task.field_hours_spent
+    - field.field.task.task.field_hours_to_do
+    - field.field.task.task.field_link
+    - field.field.task.task.field_minutes_spent
+    - field.field.task.task.field_status
+  module:
+    - task
+id: task.task.spent_time_developer
+targetEntityType: task
+bundle: task
+mode: spent_time_developer
+content:
+  field_hours_spent:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_minutes_spent:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_status:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  description: true
+  field_developer: true
+  field_hours_to_do: true
+  field_link: true
+  title: true
+  uid: true

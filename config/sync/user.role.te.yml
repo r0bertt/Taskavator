@@ -1,0 +1,14 @@
+uuid: 330f85b7-f7dc-4dba-8b06-52e208e0482c
+langcode: en
+status: true
+dependencies: {  }
+id: te
+label: 'Tech lead'
+weight: -7
+is_admin: null
+permissions:
+  - 'create task'
+  - 'delete task'
+  - 'edit own comments'
+  - 'edit task'
+  - 'view task'

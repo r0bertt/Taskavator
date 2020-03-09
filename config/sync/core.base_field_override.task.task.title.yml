@@ -1,0 +1,18 @@
+uuid: a5e15bf5-3213-4801-9359-c02a74c411aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - task
+id: task.task.title
+field_name: title
+entity_type: task
+bundle: task
+label: Title
+description: 'The title of the task entity.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
