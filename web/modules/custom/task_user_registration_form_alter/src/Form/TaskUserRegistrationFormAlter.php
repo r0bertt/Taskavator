@@ -13,25 +13,8 @@ class TaskUserRegistrationFormAlter extends RegisterForm {
 
     $form['field_github']['#states'] = [
       'visible' => [
-        ":input[name='field_roles']" => ['value' => 'te'],
+        ":input[name='field_role']" => ['value' => 'te'],
       ],
-    ];
-
-    $form['field_roles_container'] = [
-      '#type' => 'container'
-    ];
-
-    $form['field_roles_container']['widget'] = [
-      '#title' => 'Role',
-      '#type' => 'select',
-      '#description' => 'Select your role in the project',
-      '#options' => [
-        'te' => $this->t('Tech Lead'),
-        'de' => $this->t('Developer'),
-      ],
-      '#empty_option' => '- Select Your Role -',
-      '#required' => 'TRUE',
-      '#name' => 'field_roles',
     ];
 
     return $form;
@@ -39,8 +22,17 @@ class TaskUserRegistrationFormAlter extends RegisterForm {
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
 
-    $role_id = $form_state->getValue('field_roles');
-    $form_state->setValue('roles', [$role_id]);
+    $role_id = $form_state->getValue('field_role');
+
+    $transformed_roles = [];
+    foreach ($role_id as $field_role) {
+      if (isset($field_role['value'])) {
+        $transformed_roles[] = $field_role['value'];
+      }
+    }
+    if (!empty($transformed_roles)) {
+      $form_state->setValue('roles', $transformed_roles);
+    }
 
     return parent::submitForm($form, $form_state);
   }

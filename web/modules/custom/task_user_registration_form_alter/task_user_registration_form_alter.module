@@ -5,6 +5,12 @@
  */
 function task_user_registration_form_alter_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
 
+  if ($form_id != 'user_register_form'){
+    $form['field_role'] =[
+      '#type' => 'hidden',
+    ];
+  }
+
   if ($form_id != ('user_register_form' || 'user_form')) {
     $form['field_github'] = [
       '#type' => 'hidden',
