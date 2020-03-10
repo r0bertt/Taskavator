@@ -100,10 +100,10 @@ input.button:hover{
   margin: 10px;
 }
 
-.layout__region > :first-child {
- :first-child {background:red;}
+#block-languageswitcher {
+  text-align: right;
+  font-size: 12px;
 }
-
 /* End of General styling
  */
 
