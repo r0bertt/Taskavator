@@ -1,0 +1,40 @@
+label: 'Tech Leads užduotys'
+description: 'Visos Tech Lead užduotys'
+display:
+  default:
+    display_options:
+      fields:
+        description__format:
+          label: Aprasymas
+        uid:
+          label: Autorius
+        created:
+          label: 'Parasymo data'
+        field_status:
+          label: Statusas
+        field_developer:
+          label: Developeris
+        edit_task_1:
+          text: taisyti
+        view_task_1:
+          text: ziureti
+      title: Uzduotys
+      filters:
+        field_status_value:
+          expose:
+            label: 'Uzduoties statusas'
+      header:
+        area:
+          content:
+            value: '<a href="http://taskavator.page.localhost/admin/content/task/add">Sukurti uzduoti</a>'
+            format: basic_html
+      empty:
+        area:
+          content:
+            value: 'Pakolkas nera uzduociu.'
+            format: basic_html
+  page_1:
+    display_options:
+      menu:
+        title: 'Tech uzduotys'
+    display_title: Puslapis

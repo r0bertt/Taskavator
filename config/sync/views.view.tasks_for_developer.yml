@@ -910,7 +910,7 @@ display:
       exposed_block: false
       menu:
         type: normal
-        title: 'All tasks'
+        title: 'Developer all tasks'
         description: ''
         expanded: false
         parent: ''

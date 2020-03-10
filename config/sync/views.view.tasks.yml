@@ -853,7 +853,7 @@ display:
       exposed_block: false
       menu:
         type: normal
-        title: 'All tasks'
+        title: 'Tech all tasks'
         description: ''
         expanded: false
         parent: ''

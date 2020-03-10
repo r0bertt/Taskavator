@@ -1,0 +1,29 @@
+label: 'Tech Leads sarasas'
+description: 'Visi nariai su Tech Lead role'
+display:
+  default:
+    display_options:
+      fields:
+        name:
+          label: Username
+        field_last_name:
+          label: Pavarde
+        field_first_name:
+          label: Vardas
+        access:
+          label: 'Paskutinis prisijungimas'
+        edit_user:
+          text: redaguoti
+        user_picture:
+          label: Nuotrauka
+      title: 'Taskavator TechLeadai'
+      footer:
+        area:
+          content:
+            value: '<a href="http://taskavator.page.localhost/admin/people/create">Sukurti</a>'
+            format: basic_html
+  page_1:
+    display_title: Puslapis
+    display_options:
+      menu:
+        title: 'Tech Leads sarasas'

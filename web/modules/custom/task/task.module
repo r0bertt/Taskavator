@@ -43,4 +43,3 @@ function task_entity_type_alter(array &$entity_types) {
 
   $entity_types['task']->setFormClass('spent_time_developer', \Drupal\task\Form\TaskForm::class);
 }
-

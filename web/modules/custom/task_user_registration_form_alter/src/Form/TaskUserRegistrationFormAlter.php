@@ -31,7 +31,7 @@ class TaskUserRegistrationFormAlter extends RegisterForm {
       ],
       '#empty_option' => '- Select Your Role -',
       '#required' => 'TRUE',
-      '#name' => 'field_roles'
+      '#name' => 'field_roles',
     ];
 
     return $form;

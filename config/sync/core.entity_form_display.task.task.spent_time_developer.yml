@@ -35,18 +35,13 @@ content:
     third_party_settings: {  }
     type: options_select
     region: content
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
 hidden:
   created: true
   description: true
   field_developer: true
   field_hours_to_do: true
   field_link: true
+  langcode: true
   title: true
+  translation: true
   uid: true
