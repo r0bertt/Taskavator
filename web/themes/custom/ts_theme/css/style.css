@@ -151,5 +151,15 @@ td p{
   padding-right: 0;
 }
 
+td.views-field.views-field-field-link {
+  max-width: 120px;
+  word-wrap: break-word;
+  font-size: 10px;
+}
+
+.table th, .table td {
+  padding: 5px;
+}
+
 /* End of Table styling
  */
