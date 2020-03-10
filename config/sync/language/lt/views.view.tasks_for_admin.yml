@@ -1,0 +1,36 @@
+label: 'Uzduotys Admin'
+description: 'Visos uzduotys Adminui'
+display:
+  default:
+    display_options:
+      fields:
+        description__format:
+          label: Aprasymas
+        uid:
+          label: Autorius
+        created:
+          label: 'Parasymo data'
+        field_status:
+          label: Statusas
+        field_developer:
+          label: Developeris
+      filters:
+        field_status_value:
+          expose:
+            label: 'Uzduoties Statusas'
+      title: 'Uzduotys - Admin view'
+      header:
+        area:
+          content:
+            value: '<a href="http://taskavator.page.localhost/admin/content/task/add">Sukurti uzduoti</a>'
+            format: basic_html
+      empty:
+        area:
+          content:
+            value: 'Nera uzduociu.'
+            format: basic_html
+  page_1:
+    display_title: Puslapis
+    display_options:
+      menu:
+        title: 'Admin uzduotys'

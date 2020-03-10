@@ -1,0 +1,29 @@
+label: 'Uzduotys Developeriui'
+description: 'Visos uzduotys Developeriui'
+display:
+  default:
+    display_options:
+      fields:
+        description__format:
+          label: Aprasymas
+        uid:
+          label: Autorius
+        created:
+          label: 'Parasymo data'
+        field_status:
+          label: Statusas
+        field_developer:
+          label: Developeris
+        view_task:
+          text: Ziureti
+        nothing_1:
+          alter:
+            text: '<a href="http://taskavator.page.localhost/task/developer/duration/{{ id }}">Pildyti</a>'
+      filters:
+        field_status_value:
+          expose:
+            label: 'Uzduoties statusas'
+  page_1:
+    display_options:
+      menu:
+        title: 'Developer uzduotys'
