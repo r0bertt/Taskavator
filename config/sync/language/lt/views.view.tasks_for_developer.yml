@@ -23,6 +23,12 @@ display:
         field_status_value:
           expose:
             label: 'Uzduoties statusas'
+        title:
+          expose:
+            label: Pavadinimas
+      exposed_form:
+        options:
+          submit_button: Taikyti
   page_1:
     display_options:
       menu:

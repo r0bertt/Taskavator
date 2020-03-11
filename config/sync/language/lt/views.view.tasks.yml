@@ -23,6 +23,9 @@ display:
         field_status_value:
           expose:
             label: 'Uzduoties statusas'
+        title:
+          expose:
+            label: Pavadinimas
       header:
         area:
           content:

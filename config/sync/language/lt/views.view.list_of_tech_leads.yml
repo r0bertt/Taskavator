@@ -22,6 +22,9 @@ display:
           content:
             value: '<a href="http://taskavator.page.localhost/admin/people/create">Sukurti</a>'
             format: basic_html
+      exposed_form:
+        options:
+          submit_button: Taikyti
   page_1:
     display_title: Puslapis
     display_options:
