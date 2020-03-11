@@ -41,5 +41,7 @@ hidden:
   field_developer: true
   field_hours_to_do: true
   field_link: true
+  langcode: true
   title: true
+  translation: true
   uid: true

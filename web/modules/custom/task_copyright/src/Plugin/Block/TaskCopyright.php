@@ -41,23 +41,19 @@ class TaskCopyright extends BlockBase {
     ];
 
     $form['year_origin'] = [
-      '#type' => 'datelist',
+      '#type' => 'textfield',
       '#title' => $this->t('Year origin from'),
       '#description' => $this->t('Leave blank if not necessary.'),
       '#default_value' => $this->configuration['year_origin'],
-      '#date_part_order' => ['year'],
-      '#date_year_range' => '1950:(@year-1)',
     ];
 
     $date = new \DateTime();
     $form['year_to_date'] = [
-      '#type' => 'datelist',
+      '#type' => 'textfield',
       '#title' => $this->t('Year to date'),
       '#description' => $this->t('Leave blank then the current year (@year) automatically shows up.',
         ['@year' => $date->format('Y')]),
       '#default_value' => $this->configuration['year_to_date'],
-      '#date_part_order' => ['year'],
-      '#date_year_range' => '1950:@year',
     ];
 
     return $form;

@@ -1,0 +1,17 @@
+uuid: 812cd5c3-1693-42bd-9ee0-87200fb8c40d
+langcode: en
+status: true
+dependencies:
+  module:
+    - content_translation
+    - task
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: task.task
+target_entity_type_id: task
+target_bundle: task
+default_langcode: site_default
+language_alterable: true

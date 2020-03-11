@@ -18,6 +18,6 @@ settings:
   provider: task_copyright
   label_display: '0'
   organization_name: Taskavator
-  year_origin: null
-  year_to_date: null
+  year_origin: ''
+  year_to_date: ''
 visibility: {  }

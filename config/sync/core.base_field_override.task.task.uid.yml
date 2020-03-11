@@ -1,0 +1,20 @@
+uuid: baec603b-3f9b-4179-b126-305005a6ef09
+langcode: en
+status: true
+dependencies:
+  module:
+    - task
+id: task.task.uid
+field_name: uid
+entity_type: task
+bundle: task
+label: Author/Supervisor
+description: 'The user ID of the task supervisor.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

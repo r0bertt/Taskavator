@@ -50,3 +50,116 @@
 
 /*End of styling list items
  */
+
+
+/* General styling
+ */
+
+ul, li{
+  list-style-type: none;
+}
+
+ul {
+  padding-inline-start: 0px;}
+
+a{
+  color: #1aadbf;
+  text-decoration: none;
+}
+
+li a:hover{
+  color: #1aadbf;
+  border-bottom: 2px solid #1aadbf;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #1aadbf;
+  text-decoration: none;
+}
+
+input{
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #c3c3c3;
+  padding: 2px 16px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+input:focus{
+  outline: 1px solid #ffac76;
+}
+
+input.button:hover{
+  background: #1baec0;
+  cursor: pointer;
+  color: #fff;
+}
+
+.button {
+  margin: 10px;
+}
+
+#block-languageswitcher {
+  text-align: right;
+  font-size: 12px;
+}
+/* End of General styling
+ */
+
+/* Table styling
+ */
+
+.views-field-title {
+  font-size: 12px;
+}
+
+td p{
+  max-width: 120px;
+  word-wrap: break-word;
+  font-size: 10px;
+}
+
+.views-field{
+  border: 1px solid #222;
+  font-size: 13px;
+  padding: 3px;
+}
+
+.views-field-operations{
+  max-width: 50px;
+}
+
+.table footer{
+  margin-top:10px;
+}
+
+.tabadm .dropbutton-wrapper.open{
+  background: #c3e4d3; padding:5px;
+}
+
+.js .tabadm td .dropbutton-widget{
+  position: relative;
+}
+
+.tabadm .views-field-operations{
+  max-width: initial;
+}
+
+.js .tabadm td .dropbutton-multiple{
+  margin-right: 0;
+  padding-right: 0;
+}
+
+td.views-field.views-field-field-link {
+  max-width: 120px;
+  word-wrap: break-word;
+  font-size: 10px;
+}
+
+.table th, .table td {
+  padding: 5px;
+}
+
+/* End of Table styling
+ */
