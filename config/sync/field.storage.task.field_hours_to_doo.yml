@@ -1,11 +1,11 @@
-uuid: d239a125-89e0-40d6-b102-94333c03fb05
+uuid: 2f94d0bc-214a-4da1-972e-b7e8c406cc00
 langcode: en
 status: true
 dependencies:
   module:
     - task
-id: task.field_hours_spent
-field_name: field_hours_spent
+id: task.field_hours_to_doo
+field_name: field_hours_to_doo
 entity_type: task
 type: float
 settings: {  }

@@ -1,0 +1,25 @@
+{% if page.header %}
+  <header class="container text-center border-bottom pt-3 pb-3 bg-light">
+    {{ page.header }}
+  </header>
+{% endif %}
+
+<main class="container text-center pt-3 pb-3 bg-light">
+  <div class="row">
+    {% if page.sidebar_first %}
+      <aside class="col-4 border-right">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
+    <section class="{{ page.sidebar_first|render|striptags|trim is empty ? 'col-12' : 'col-8' }}">
+      {{ page.content }}
+      <canvas id="myChart" width="400" height="400"></canvas>
+    </section>
+  </div>
+</main>
+
+{% if page.footer %}
+  <footer class="container text-center footer text-muted pt-3 pb-3 bg-dark">
+    {{ page.footer }}
+  </footer>
+{% endif %}

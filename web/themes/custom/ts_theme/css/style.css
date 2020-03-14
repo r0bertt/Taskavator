@@ -25,6 +25,11 @@
   padding:10px;
   border-radius:5px
 }
+
+#edit-field-hours-spent-0-value {
+  width: 10%
+}
+
 /*End of styling forms
 */
 
@@ -162,4 +167,25 @@ td.views-field.views-field-field-link {
 }
 
 /* End of Table styling
+ */
+
+/* Styling profile
+ */
+
+#block-ts-theme-local-tasks ul{
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  margin-bottom: 10px;
+  padding: 6px;
+}
+
+.layout.layout--onecol .title-field{
+  font-weight: bold;
+}
+
+article.profile {
+  background-color: #f3f3f3;
+}
+
+/* End of styling profile
  */

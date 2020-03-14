@@ -6,9 +6,8 @@ dependencies:
     - core.entity_form_mode.task.spent_time_developer
     - field.field.task.task.field_developer
     - field.field.task.task.field_hours_spent
-    - field.field.task.task.field_hours_to_do
+    - field.field.task.task.field_hours_to_doo
     - field.field.task.task.field_link
-    - field.field.task.task.field_minutes_spent
     - field.field.task.task.field_status
   module:
     - task
@@ -18,19 +17,14 @@ bundle: task
 mode: spent_time_developer
 content:
   field_hours_spent:
+    type: number
     weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
-  field_minutes_spent:
-    weight: 1
-    settings: {  }
+    settings:
+      placeholder: ''
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_status:
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -39,7 +33,7 @@ hidden:
   created: true
   description: true
   field_developer: true
-  field_hours_to_do: true
+  field_hours_to_doo: true
   field_link: true
   langcode: true
   title: true

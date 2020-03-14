@@ -35,7 +35,7 @@ use Drupal\user\UserInterface;
  *   data_table = "task_field_data",
  *   revision_table = "task_revision",
  *   revision_data_table = "task_field_revision",
- *   show_revision_ui = TRUE,
+ *   show_revision_ui = FALSE,
  *   translatable = TRUE,
  *   admin_permission = "administer task",
  *   entity_keys = {
