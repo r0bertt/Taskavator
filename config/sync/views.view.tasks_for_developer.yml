@@ -555,7 +555,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: '-'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -833,7 +833,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<a href="http://taskavator.page.localhost/task/developer/duration/{{ id }}">Manage</a>'
+            text: "<a \r\nclass=\"use-ajax\"\r\ndata-dialog-options=\"{&quot;width&quot;:400}\" \r\ndata-dialog-type=\"modal\" \r\nhref=\"http://taskavator.page.localhost/task/developer/duration/{{ id }}\">Manage</a>"
             make_link: false
             path: ''
             absolute: false
@@ -1003,6 +1003,7 @@ display:
         operator: AND
         groups:
           1: AND
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:

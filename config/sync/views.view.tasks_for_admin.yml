@@ -461,7 +461,7 @@ display:
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
-          empty: ''
+          empty: '-'
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
@@ -871,6 +871,7 @@ display:
         operator: AND
         groups:
           1: AND
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
