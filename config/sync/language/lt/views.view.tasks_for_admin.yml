@@ -16,6 +16,9 @@ display:
           label: Developeris
         field_hours_to_doo:
           label: 'Valandos atlikti'
+        field_link:
+          alter:
+            text: 'Nera nuorodos'
       filters:
         field_status_value:
           expose:

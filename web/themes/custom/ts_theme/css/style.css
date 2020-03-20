@@ -22,7 +22,6 @@
 .user-register-form .js-form-item{
   background: #fff;
   margin:10px 0;
-  padding:10px;
   border-radius:5px
 }
 
@@ -188,4 +187,21 @@ article.profile {
 }
 
 /* End of styling profile
+ */
+
+/* Node content article view styling
+ */
+
+#block-ts-theme-content article.contextual-region{
+  word-wrap: break-word;
+  background-color: #f3f3f3;
+  margin: 10px 0;
+  padding:10px;
+}
+
+#block-ts-theme-content article.contextual-region .title-field{
+  font-weight: bold;
+}
+
+/* End of node content article view styling
  */
