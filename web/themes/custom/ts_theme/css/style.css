@@ -203,5 +203,12 @@ article.profile {
   font-weight: bold;
 }
 
+#block-ts-theme-content article .title-field {
+  font-weight: bold;
+}
+
+#block-ts-theme-content article {
+  background-color: #f3f3f3;
+}
 /* End of node content article view styling
  */
