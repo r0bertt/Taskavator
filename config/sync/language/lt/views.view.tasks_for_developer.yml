@@ -17,8 +17,7 @@ display:
         view_task:
           text: Ziureti
         nothing_1:
-          alter:
-            text: '<a href="http://taskavator.page.localhost/task/developer/duration/{{ id }}">Pildyti</a>'
+          alter: {  }
         field_hours_to_doo:
           label: 'Valandos atlikti'
       filters:
