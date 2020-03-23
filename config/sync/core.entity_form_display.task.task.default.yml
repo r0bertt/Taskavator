@@ -32,7 +32,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_hours_to_doo:
-    weight: 7
+    weight: 5
     settings:
       placeholder: ''
     third_party_settings: {  }
@@ -40,25 +40,18 @@ content:
     region: content
   field_link:
     type: link_default
-    weight: 5
+    weight: 4
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
   field_status:
-    weight: 4
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  langcode:
-    type: language_select
-    weight: 3
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -67,12 +60,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  translation:
-    weight: 6
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   created: true
   field_hours_spent: true
+  langcode: true
+  translation: true
   uid: true
