@@ -1,0 +1,20 @@
+label: Statistika
+description: 'Puslapis perziureti uzduociu  ''Valandos atlitki'' ir ''Praleistos valandos'' diagramos.'
+display:
+  default:
+    display_options:
+      style:
+        options:
+          caption: 'Statistikos lentele'
+      fields:
+        field_hours_spent:
+          label: 'Praleistas laikas'
+        field_hours_to_doo:
+          label: 'Paskirtas laikas'
+        title:
+          label: Uzduotis
+      title: Statistika
+  page_1:
+    display_options:
+      menu:
+        title: 'Uzduociu statistika'

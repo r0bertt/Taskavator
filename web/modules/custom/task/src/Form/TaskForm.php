@@ -21,17 +21,29 @@ class TaskForm extends ContentEntityForm {
 
     $message_arguments = ['%label' => $this->entity->label()];
     $logger_arguments = $message_arguments + ['link' => render($link)];
- 
+
     if ($result == SAVED_NEW) {
-      $this->messenger()->addStatus($this->t('New task %label has been created.', $message_arguments));
-      $this->logger('task')->notice('Created new task %label', $logger_arguments);
+      $this->messenger()
+        ->addStatus($this->t('New task %label has been created.', $message_arguments));
+      $this->logger('task')
+        ->notice('Created new task %label', $logger_arguments);
     }
     else {
-      $this->messenger()->addStatus($this->t('The task %label has been updated.', $message_arguments));
-      $this->logger('task')->notice('Updated new task %label.', $logger_arguments);
+      $this->messenger()
+        ->addStatus($this->t('The task %label has been updated.', $message_arguments));
+      $this->logger('task')
+        ->notice('Updated new task %label.', $logger_arguments);
     }
 
     $form_state->setRedirect('entity.task.canonical', ['task' => $entity->id()]);
+  }
+
+  public function buildForm(array $form, FormStateInterface $form_state) {
+
+    $form = parent::buildForm($form, $form_state);
+    unset($form['revision_log']);
+
+    return $form;
   }
 
 }

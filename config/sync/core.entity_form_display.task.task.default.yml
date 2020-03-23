@@ -5,9 +5,8 @@ dependencies:
   config:
     - field.field.task.task.field_developer
     - field.field.task.task.field_hours_spent
-    - field.field.task.task.field_hours_to_do
+    - field.field.task.task.field_hours_to_doo
     - field.field.task.task.field_link
-    - field.field.task.task.field_minutes_spent
     - field.field.task.task.field_status
   module:
     - link
@@ -32,33 +31,27 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hours_to_do:
-    type: options_select
-    weight: 4
-    region: content
-    settings: {  }
+  field_hours_to_doo:
+    weight: 5
+    settings:
+      placeholder: ''
     third_party_settings: {  }
+    type: number
+    region: content
   field_link:
     type: link_default
-    weight: 6
+    weight: 4
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
   field_status:
-    weight: 5
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  langcode:
-    type: language_select
-    weight: 3
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   title:
     type: string_textfield
     weight: 0
@@ -70,5 +63,6 @@ content:
 hidden:
   created: true
   field_hours_spent: true
-  field_minutes_spent: true
+  langcode: true
+  translation: true
   uid: true

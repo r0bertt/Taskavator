@@ -18,11 +18,16 @@ display:
           text: taisyti
         view_task_1:
           text: ziureti
+        field_hours_to_doo:
+          label: 'Valandos atlikti'
       title: Uzduotys
       filters:
         field_status_value:
           expose:
             label: 'Uzduoties statusas'
+        title:
+          expose:
+            label: Pavadinimas
       header:
         area:
           content:

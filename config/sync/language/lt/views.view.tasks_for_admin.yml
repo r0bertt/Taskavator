@@ -14,10 +14,18 @@ display:
           label: Statusas
         field_developer:
           label: Developeris
+        field_hours_to_doo:
+          label: 'Valandos atlikti'
+        field_link:
+          alter:
+            text: 'Nera nuorodos'
       filters:
         field_status_value:
           expose:
             label: 'Uzduoties Statusas'
+        title:
+          expose:
+            label: Pavadinimas
       title: 'Uzduotys - Admin view'
       header:
         area:
@@ -29,6 +37,9 @@ display:
           content:
             value: 'Nera uzduociu.'
             format: basic_html
+      exposed_form:
+        options:
+          submit_button: Taikyti
   page_1:
     display_title: Puslapis
     display_options:

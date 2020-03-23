@@ -22,6 +22,10 @@ display:
           content:
             value: '<a href="http://taskavator.page.localhost/admin/people/create">Sukurti</a>'
             format: restricted_html
+      filters:
+        uid:
+          expose:
+            label: Username
   page_1:
     display_title: Puslapis
     display_options:

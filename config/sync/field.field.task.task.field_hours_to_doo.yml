@@ -1,18 +1,18 @@
-uuid: 9ee7742b-fda8-444a-85db-bedc3ed9100c
+uuid: c5d8023b-995c-47d3-9558-e29ab11063b2
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.task.field_hours_spent
+    - field.storage.task.field_hours_to_doo
   module:
     - task
-id: task.task.field_hours_spent
-field_name: field_hours_spent
+id: task.task.field_hours_to_doo
+field_name: field_hours_to_doo
 entity_type: task
 bundle: task
-label: 'Hours spent'
+label: 'Hours to do'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

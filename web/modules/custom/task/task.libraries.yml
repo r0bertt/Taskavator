@@ -1,0 +1,7 @@
+chartjs:
+  js:
+    https://cdn.jsdelivr.net/npm/chart.js@2.8.0: {}
+    js/chartjs.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

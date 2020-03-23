@@ -37,6 +37,27 @@ function template_preprocess_task(array &$variables) {
 }
 
 /**
+ * Implements hook_page_attachments().
+ */
+function task_page_attachments(array &$attachments) {
+
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $task_storage = $entity_type_manager->getStorage('task');
+  $datas = $task_storage->loadMultiple();
+
+  foreach ($datas as $data) {
+    $stats[] = [
+      $data->get('title')->value,
+      $data->get('field_hours_to_doo')->value,
+      $data->get('field_hours_spent')->value,
+    ];
+  }
+
+  $attachments['#attached']['drupalSettings']['statistic'] = $stats;
+  $attachments['#attached']['library'][] = 'task/chartjs';
+}
+
+/**
  * Implements hook_entity_type_alter().
  */
 function task_entity_type_alter(array &$entity_types) {

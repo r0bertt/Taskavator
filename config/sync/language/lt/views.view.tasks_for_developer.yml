@@ -17,12 +17,19 @@ display:
         view_task:
           text: Ziureti
         nothing_1:
-          alter:
-            text: '<a href="http://taskavator.page.localhost/task/developer/duration/{{ id }}">Pildyti</a>'
+          alter: {  }
+        field_hours_to_doo:
+          label: 'Valandos atlikti'
       filters:
         field_status_value:
           expose:
             label: 'Uzduoties statusas'
+        title:
+          expose:
+            label: Pavadinimas
+      exposed_form:
+        options:
+          submit_button: Taikyti
   page_1:
     display_options:
       menu:
